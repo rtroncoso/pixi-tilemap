@@ -1,3 +1,5 @@
+PIXI.settings.PRECISION_FRAGMENT = PIXI.PRECISION.HIGH;
+
 /**
  * Created by Liza on 30.10.2015.
  */
