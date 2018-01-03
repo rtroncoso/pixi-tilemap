@@ -1,6 +1,6 @@
 /// <reference path="TileRenderer.ts" />
 
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     import glCore = PIXI.glCore;
 
@@ -15,7 +15,7 @@ module PIXI.tilemap {
 
     export class SimpleTileRenderer extends TileRenderer {
 
-        constructor(renderer: WebGLRenderer) {
+        constructor(renderer: PIXI.WebGLRenderer) {
             super(renderer)
         }
 
@@ -29,7 +29,7 @@ module PIXI.tilemap {
             this.vbs = {};
         }
 
-        bindTextures(renderer: WebGLRenderer, shader: TilemapShader, textures: Array<PIXI.Texture>) {
+        bindTextures(renderer: PIXI.WebGLRenderer, shader: TilemapShader, textures: Array<PIXI.Texture>) {
             const len = textures.length;
 
             let i: number;

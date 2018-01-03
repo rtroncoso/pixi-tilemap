@@ -1,4 +1,4 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     export class ZLayer extends PIXI.Container {
 

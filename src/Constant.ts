@@ -1,4 +1,4 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     export const Constant = {
         maxTextures: 4,

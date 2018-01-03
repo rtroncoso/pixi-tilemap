@@ -1,4 +1,4 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     export class CanvasTileRenderer {
 
@@ -15,4 +15,3 @@ module PIXI.tilemap {
     PIXI.CanvasRenderer.registerPlugin('tilemap', CanvasTileRenderer);
 
 }
-

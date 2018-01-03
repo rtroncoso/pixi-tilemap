@@ -1,4 +1,6 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
+
+    import glCore = PIXI.glCore;
 
     export class RectTileLayer extends PIXI.Container {
 
@@ -19,7 +21,7 @@ module PIXI.tilemap {
 
         pointsBuf: Array<number> = [];
         hasAnim = false;
-        textures: Array<Texture>;
+        textures: Array<PIXI.Texture>;
 
         offsetX = 0;
         offsetY = 0;
@@ -133,7 +135,7 @@ module PIXI.tilemap {
             }
         }
 
-        renderCanvas(renderer: CanvasRenderer) {
+        renderCanvas(renderer: PIXI.CanvasRenderer) {
             var plugin = renderer.plugins.tilemap;
             if (!plugin.dontUseTransform) {
                 var wt = this.worldTransform;
@@ -149,7 +151,7 @@ module PIXI.tilemap {
             this.renderCanvasCore(renderer);
         }
 
-        renderCanvasCore(renderer: CanvasRenderer) {
+        renderCanvasCore(renderer: PIXI.CanvasRenderer) {
             if (this.textures.length === 0) return;
             var points = this.pointsBuf;
             renderer.context.fillStyle = '#000000';
@@ -176,7 +178,7 @@ module PIXI.tilemap {
         vbArray: Float32Array = null;
         vbInts: Uint32Array = null;
 
-        renderWebGL(renderer: WebGLRenderer) {
+        renderWebGL(renderer: PIXI.WebGLRenderer) {
             var gl = renderer.gl;
             var plugin = renderer.plugins.simpleTilemap;
             var shader = plugin.getShader();
@@ -192,7 +194,7 @@ module PIXI.tilemap {
             this.renderWebGLCore(renderer, plugin);
         }
 
-        renderWebGLCore(renderer: WebGLRenderer, plugin: PIXI.ObjectRenderer) {
+        renderWebGLCore(renderer: PIXI.WebGLRenderer, plugin: PIXI.ObjectRenderer) {
             var points = this.pointsBuf;
             if (points.length === 0) return;
             var rectsCount = points.length / 9;

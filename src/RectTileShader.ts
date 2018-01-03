@@ -1,4 +1,4 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     import GLBuffer = PIXI.glCore.GLBuffer;
     import VertexArrayObject = PIXI.glCore.VertexArrayObject;
@@ -58,7 +58,7 @@ void main(void){
             shaderGenerator.fillSamplers(this, this.maxTextures);
         }
 
-        abstract createVao(renderer: WebGLRenderer, vb: GLBuffer): VertexArrayObject;
+        abstract createVao(renderer: PIXI.WebGLRenderer, vb: GLBuffer): VertexArrayObject;
     }
 
     export class RectTileShader extends TilemapShader {
@@ -75,7 +75,7 @@ void main(void){
             shaderGenerator.fillSamplers(this, this.maxTextures);
         }
 
-        createVao(renderer: WebGLRenderer, vb: GLBuffer) {
+        createVao(renderer: PIXI.WebGLRenderer, vb: GLBuffer) {
             var gl = renderer.gl;
             return renderer.createVao()
                 .addIndex(this.indexBuffer)

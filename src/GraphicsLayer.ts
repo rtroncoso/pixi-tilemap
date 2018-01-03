@@ -1,4 +1,4 @@
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     class GraphicsLayer extends PIXI.Graphics {
 
@@ -23,7 +23,7 @@ module PIXI.tilemap {
             renderer.context.globalAlpha = 1.0;
         }
 
-        renderWebGL(renderer: WebGLRenderer) {
+        renderWebGL(renderer: PIXI.WebGLRenderer) {
             if (!this._webGL[renderer.CONTEXT_UID])
                 this.dirty = true;
             super.renderWebGL(renderer)

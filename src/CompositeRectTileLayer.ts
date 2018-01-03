@@ -1,10 +1,10 @@
 /// <reference types="pixi.js" />
 
-module PIXI.tilemap {
+namespace pixi_tilemap {
 
     export class CompositeRectTileLayer extends PIXI.Container {
 
-        constructor(zIndex?: number, bitmaps?: Array<Texture>, texPerChild?: number) {
+        constructor(zIndex?: number, bitmaps?: Array<PIXI.Texture>, texPerChild?: number) {
             super();
             this.initialize.apply(this, arguments);
         }
@@ -21,7 +21,7 @@ module PIXI.tilemap {
 
         texPerChild: number;
 
-        initialize(zIndex?: number, bitmaps?: Array<Texture>, texPerChild?: number) {
+        initialize(zIndex?: number, bitmaps?: Array<PIXI.Texture>, texPerChild?: number) {
             this.z = this.zIndex = zIndex;
             this.texPerChild = texPerChild || Constant.boundCountPerBuffer * Constant.maxTextures;
             if (bitmaps) {
@@ -29,7 +29,7 @@ module PIXI.tilemap {
             }
         }
 
-        setBitmaps(bitmaps: Array<Texture>) {
+        setBitmaps(bitmaps: Array<PIXI.Texture>) {
             var texPerChild = this.texPerChild;
             var len1 = this.children.length;
             var len2 = Math.ceil(bitmaps.length / texPerChild);
@@ -130,7 +130,7 @@ module PIXI.tilemap {
             return true;
         }
 
-        renderCanvas(renderer: CanvasRenderer) {
+        renderCanvas(renderer: PIXI.CanvasRenderer) {
             var plugin = renderer.plugins.tilemap;
             if (!plugin.dontUseTransform) {
                 var wt = this.worldTransform;
@@ -149,7 +149,7 @@ module PIXI.tilemap {
             }
         }
 
-        renderWebGL(renderer: WebGLRenderer) {
+        renderWebGL(renderer: PIXI.WebGLRenderer) {
             var gl = renderer.gl;
             var plugin = renderer.plugins.tilemap;
             var shader = plugin.getShader();

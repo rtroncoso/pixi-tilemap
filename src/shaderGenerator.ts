@@ -1,4 +1,4 @@
-module PIXI.tilemap.shaderGenerator {
+namespace pixi_tilemap.shaderGenerator {
 
     export function fillSamplers(shader: TilemapShader, maxTextures: number) {
         var sampleValues: Array<number> = [];
