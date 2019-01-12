@@ -6,8 +6,8 @@
   "contributors": [
     "Ivan Popelyshev <ivan.popelyshev@gmail.com>"
   ],
-  "main": "./bin/pixi-tilemap.js",
-  "types": "./bin/pixi-tilemap.d.ts",
+  "main": "./dist/pixi-tilemap.js",
+  "types": "./dist/pixi-tilemap.d.ts",
   "homepage": "http://www.rpgmakerweb.com/",
   "bugs": "https://github.com/pixijs/pixi-tilemap/issues",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "url": "https://github.com/pixijs/pixi-tilemap.git"
   },
   "scripts": {
-    "clean": "rimraf bin && mkdirp bin",
+    "clean": "rimraf dist && mkdirp dist",
     "prestart": "npm run clean",
     "start": "parallelshell \"npm run watch\"",
     "watch": "tsc -w",
@@ -26,6 +26,7 @@
   },
   "files": [
     "bin/",
+    "dist/",
     "src/",
     "CONTRIBUTING.md",
     "LICENSE",
